@@ -293,7 +293,7 @@
     
     - **continue**구문은 이 구문 아래의 실행 구문들을 모두 건너뛰고, 다음 반복 루프를 시작하는데 사용된다.
     
-    - `switch (a) { case 1 : print(1) continue  case 2 : print(2)  defult : printf("error")}`
+      - `switch (a) { case 1 : print(1) continue  case 2 : print(2)  defult : printf("error")}`
     
     - 결과를 저장할 변수를 선언한 뒤 **.append()** 메소드를 통해 필터링하거나 다른 문자로 번경 할 수 있다.
     

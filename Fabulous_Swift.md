@@ -716,29 +716,98 @@ repeat {
 3. 제어 전달문
     - **break**구문은 루프를 조건식의 결과에 상관 없이 강제종료 하는데 사용된다.
     
-      `if (a==1) {while true {printf("Hello")}} else {continue}`
-    
-    - **continue**구문은 이 구문 아래의 실행 구문들을 모두 건너뛰고, 다음 반복 루프를 시작하는데 사용된다.
-    
-      `switch (a) { case 1 : print(1) continue  case 2 : print(2)  defult : printf("error")}`
-    
-    - 결과를 저장할 변수를 선언한 뒤 **.append()** 메소드를 통해 필터링하거나 다른 문자로 번경 할 수 있다.
-    
-    - 조건문, 반복문 앞에 레이블 이름과 콜론을 붙여 정확히 흐름 제어가 적용 될 수 있게 해주는 **구문 레이블**을 정의할 수 있다.
-    
-      `레이블 이름: 조건, 반복문`
-    
-      `sweet: if(a==1) {print("chocolete")}`
+      ```swift
+      var i = 1
+      
+      for _ in 1...7 {
+          print(i)
+          if (i==4) {
+              break
+          }
+          i += 1
+      }
+      
+      ------result------
+      1
+      2
+      3
+      4
+      
+      ```
     
     - 중첩된 구문 내에 있는 break문은 **외부 반복문에는 영향을 주지 못한다.**
     
+      
+    
+    - **continue**구문은 이 구문 아래의 실행 구문들을 모두 건너뛰고, 다음 반복 루프를 시작하는데 사용된다.
+    
+      ```swift
+      var i = 0
+      
+      for _ in 0...7 {
+          i += 1
+          if (i==4) {
+              continue
+          }
+         print(i)
+      }
+      
+      ------result------
+      1
+      2
+      3
+      5
+      6
+      7
+      
+      ```
+    
+      
+    
+    - 조건문, 반복문 앞에 레이블 이름과 콜론을 붙여 정확히 흐름 제어가 적용 될 수 있게 해주는 **구문 레이블**을 정의할 수 있다.
+    
+      ```swift
+      레이블 이름: 조건 반복문
+      ```
+    
+      ```swift
+      let foo = 1
+      
+      sweet: if(foo==1) {
+        print("chocolete")
+      }
+      ```
+    
+      
+    
     - **fallthrough**구문은 **switch 구문에서 case 블록의 실행을 다음 case 블록으로 전달할 때 사용**한다.
     
-      `switch (a) { case 1: { print(1)}} fallthrough case 2: {print(2)}}`
+      ```swift
+      var foo = 1
+      
+      switch foo {
+      case 1:
+          print("foo는 1이에요")
+          fallthrough
+      case 2:
+          print("foo는 2에요")
+      default:
+          print("모르겠어요")
+      }
+      
+      ------result------
+      foo는 1이에요
+      foo는 2에요
+      
+      ```
+    
+      
     
     - **return**구문은 **값을 반환할때 사용**한다.(함수에서 많이 사용)
     
-      `if (a==1) {return 1}`
+      ```swift
+      return 반환할 값
+      ```
     
     ==========
 # 집단 자료형

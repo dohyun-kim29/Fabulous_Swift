@@ -96,10 +96,20 @@
 2. 변수와 상수
      - 변수(변할 수 있는 수)는 var 키워드로 선언한다. 
      
-       `var keyboard = 1`
-     - 상수(변하지 않는 수)는 let 키워드로 선언한다. 
-     
-       `let guitar = 1`
+       ``` swift
+       var keyboard = 1
+       ```
+       
+       
+       
+       상수(변하지 않는 수)는 let 키워드로 선언한다. 
+       
+       ```swift
+       let guitar = 1
+       ```
+       
+       
+       
      - **이때 변수일 경우에만 선언과 초기화를 분리 할 수 있다.**
      
      **당연한 말이지만 선언해준 변수나 상수를 다른 타입으로 초기화를 하면 오류가 발생한다.**
@@ -110,38 +120,46 @@
      
      - Swift 에서 예약어나 키워드로 등록되어있는것 또한 변수, 상수명으로 사용 불가 단, **대소문자를 바꿔서 사용 가능하다.** 
      
-       `var Int` (X)
-     
-       `var int` (O)
+       ```swift
+       var Int (X)
+       var int (O)
+       ```
      
      - 변수, 상수명의 첫번쨰 자리에 숫자가 올 수 없다.
      
  3. 자료형
     - **Int**는 Int8 기준으로 256 개의 값(**정수**)을 저장 할 수 있다.(127~-128)
     
-      `var macbook : Int = 0`
+      ```swift
+      var macbookPro : Int = 0
+      ```
     
     - 컴퓨터의 CPU 에 따라 최대 9223372036854775807~-9223372036854775808 (Int64) 까지 저장할 수 있다.
     
     - 이러한 값들은 Int.max, Int.min 으로 확인할 수 있다.
     
-      `print(Int.max)`
-    
-      `print(Int.min)`
+      ```swift
+      print(Int.max)
+      print(Int.min)
+      ```
     
     - -범위를 저장할 수 없는 대신 **두 배**(정확히는 두배 +1)의 값을 저장할 수 있는 UInt 가 있다.
     
     - 실수를 저장할 수 있는 **Float**와 **Double**이 있다.
     
-      `var airpods : Float = 3.33`
-    
-      `let iphone : Double = 4.56`
+      ```swift
+      var airpods : Float = 3.33
+      var iPhone : Double = 4.56
+      ```
     
     - Float 는 32비트, Double은 64비트로 Double을 쓰는 것이 더 오차가 적다.
     
     - true와 false 두 가지 종류의 값만 가질 수 있는 **Bool** 이 있다.(주로 논리값을 저장)
     
-      `var milk : Bool = true`
+      ```swift
+      var appleWatch : Bool = true
+      var milk : Bool = false
+      ```
     
     - Int와 함께 가장 많이 사용되는 자료형인 문자열을 입력받는 **String** 이 있다.
     

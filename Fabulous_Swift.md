@@ -859,47 +859,121 @@ repeat {
     - 배열을 **순회 탐색할 때에는 보통 for~in 구문**과 **반 닫힌 범위 연산자**를 많이 사용한다.`
     
     - 배열의 길이를 구할 때에는 배열 변수나 상수에 **.count** 를 붙여주면 된다.
+    
+      ```swift
+      var yellowCity = ["Apdo", "MonsterRat", "Ralo", "Paka"]
+      
+      print(yellowCity.count)
+      
+      ------result------
+      4
+      
+      ```
 
-  `print(급식.count)`
-    - 또한 **이터네이터** 를 사용하는 방법이 있다. **for~in 구문에 배열을 넣어주면** 루프 상수에 할당되는 것이다.
 
-  `for 급식 in 0..<3`
+
+
+   - 또한 **이터네이터** 를 사용하는 방법이 있다. **for~in 구문에 배열을 넣어주면** 루프 상수에 할당되는 것이다.
+
+     ```swift
+     var hiphopLable = ["Ambition", "IMJM", "AOMG"]
+     
+     for hiphopLable in 0...3 {
+       print(hiphopLable)
+     }
+     
+     ------result------
+     0
+     1
+     2
+     3
+     
+     ```
+
+
 
 - index(of:) 메소드를 사용해 아이템이 몇 번째 인덱스에 저장되어있는지 알아낼 수 있다.
 
-  `print(급식.index(of:"chicken"))`
+  ```swift
+  var rapper = ["Justhis", "Ash Island", "CHANGMO"]
+  
+  print(rapper.index(of:"Justhis"))
+  
+  ------result------
+  optional(0)
+  
+  //여기서 나오는 optional은 뒤에서 다룬다 이를 없애주려면
+  //print(rapper.index(of:"Justhis")!)로 고쳐주면 된다고만 알아두자.
+  
+  ```
 
-- 배열을 동적인 방법으로 선언하고 초기화 할 때
-
-  ` var 배열이름  =  Array <아이템 타입> (배열 안에 들어갈 내용) `
-
-  `var 1학년2반 = Array <String> ("밍기", "준상")`
-
-- 배열을 동적인 방법으로 선언할때에는 **선언과 초기화를 분리**할 수 도 있다.
-
-  **선언**       `var 배열이름 : Array <아이템 타입>`
-
-  **초기화**   `선언이 완료된 배열 이름 = Array()`
-
-- ### **초기화할 때에는 아이템 타입을 생략할 수 있다.**
+  
 
 - 배열이 비었는지 체크할 때에는 메소드 **isEmpty** 를 사용하면 된다. 이 메소드는 **배열이 비어있으면 true, 비어있지 않으면 false를 반환**한다.
 
-  `print(1학년2반.isEmpty)`
+  ```swift
+  선언 완료된 배열 이름.isEmpty
+  ```
+
+  ```swift
+  var myGirlfriend = [""]
+  
+  print(myGirlfriend.isEmpty)
+  
+  ------result------
+  false
+  
+  ```
 
 - 배열에 값을 동적으로 추가하고 싶을 때
 
-  `1학년2반.append( "도현":)`
-
-  `1학년2반.insert( "대성":at:1)`
-
-  `1학년2반.append(contentsOf:"어진")`
+  ```swift
+  선언 완료된 배열 이름.append(추가할 데이터)
+  ```
 
 - **append(_:)** 메소드는 **배열의 크기를 1만큼 확장하고, 입력된 값을 배열의 맨 뒤에 추가한다.** 
 
+  
+
+  ```swift
+  선언 완료된 배열 이름.insert(추가할 데이터, at:원하는 인덱스 위치)
+  ```
+
 - **insert(_:at:)** 메소드는 **아이템을 끼어들기 시켜 원하는 위치에 넣을 때 사용된다. at 뒤에 입력되는 정수값은 배열에서 아이템이 추가될 인덱스의 위치를 의미한다.**
 
+  
+
+  ```swift
+  선언 완료된 배열 이름.append(contentsOf:[추가할데이터1, 추가할데이터2, 추가할데이터n...])
+  ```
+
 - **append(contentsOf:)** 메소드는 **여러 개의 아이템을 배열에 한꺼번에 추가할 때 쓰는 메소드이다.**
+
+  
+
+  ```Swift
+  var todayDinner = [""]
+  
+  todayDinner.append("rice")
+  todayDinner.insert("meat", at: 1)
+  todayDinner.append(contentsOf: ["kimchi", "nutellaBanana"])
+  
+  print(todayDinner[0])
+  print(todayDinner[1])
+  print(todayDinner[2])
+  print(todayDinner[3])
+  print(todayDinner[4])
+  
+  ------result------
+  
+  meat
+  rice
+  kimchi
+  nutellaBanana
+  
+  ```
+
+  
 
 - **입력된 배열값을 번경하고 싶을 때에는 기존 인덱스에 연결된 아이템을 교체하면 된다.**
 

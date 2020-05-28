@@ -1060,37 +1060,87 @@ repeat {
 
   `메소드를 사용할 배열명.sorted( )`
 
+  ```swift
+  var music : Set = ["pop", "rock", "Hip"]
+  print(music)
+  
+  ------result------
+  
+  ["rock", "Hip", "pop"]
+  ```
+
+  
+
 - 집합에 아이템을 동적으로 추가할 떄에는 **배열과 동일하게 insert(_:) 메소드를 사용**한다.
 
-    `dinner.insert("iceCream")`
+    `아이템을 추가할 배열 명.insert("추가할 아이템")`
+
+     ```swift
+    var choco : Set = ["dark", "milk"]
+    print(choco)
+    
+    choco.insert("white")
+    print(choco)
+    
+    ------result------
+    
+    ["milk", "dark"]
+    ["milk", "white", "dark"]
+     ```
+
+    
 
 - 다만 **삭제할 때에는 remove(_:)메소드를 사용**한다. 
 
+    ```swift
+    ar dessert : Set = ["macaron", "cake"]
+print(dessert)
+    
+dessert.remove("macaron")
+    print(dessert)
+
+    dessert.remove("candy")
+print(dessert)
+    
+------result------
+    
+["macaron", "cake"]
+    ["cake"]
+["cake"]
+    ```
+
+    
+
     - 그러나 **삭제할 값이 집합에 없으면 remove(:_)메소드는 아무것도 삭제하지 않고 nil 을 반환**한다.
+
+    - ![image-20200528135137193](/Users/dohyunkim/Library/Application Support/typora-user-images/image-20200528135137193.png)
+
+      위 코드를 실행했을 때의 중간 과정
+
     - **contains(_:)** 메소드는 인자값으로 입력된 데이터를 사용하여 **집합 안에 일치하는 데이터가 있는지 없는지 알려준다.**(Bool값으로 알려준다.)
-
+    
     - **집합끼리는 연산을 할 수 있다.**  EX) arr1.intersection(arr2)
-
+    
     - **intersection(_:) 메소드는 양쪽에서 공통된 아이템만 선택하여 새로운 집합을 만들어준다.**
-
+    
     - **symmetric Difference(_:) 메소드는 양쪽에서 어느 한 쪽에만 있는 아이템을 선택하여 새로운 집합을 만들어준다.(공통으로 있는 아이템은 제외)**
-
+    
     - **union(_:) 메소드는 양쪽 모두에 있는 아이템을 모두 선택해 새로운 집합을 만들어준다.(공통으로 있는 아이템이라고 해서 중복되지 않음)**
-
+    
     - **subtract(_:) 메소드는 한쪽 집합에 있는 모든 아이템에서 다른쪽 집합에도 속하는 공통 아이템을 제외하고 새로운 집합을 만들어준다.**
-
+    
     - subtract(_:) 메소드를 제외하고는 양쪽 집합의 위치가 바뀌어도 결과는 동일하다.
-
+    
     - 또한 포함관계를 판단해주는 연산도 가능하다.
-
+    
     - **isSubject(of:) 메소드는 주어진 집합의 값 전체가 특정 집합에 포함되는지 여부를 판단하여 Bool 값을 반환해준다.**
-
+    
     - **isSuperest(of:) 메소드는 주어진 집합이 특정 집합의 모든 값을 포함하는지흫 판단하여 Bool 값을 반환해준다.**
-
+    
     - **isStrictSubject(of:)와 isStrictSuperset(of:) 메소드는 위의 두 메소드와 같지만, 두 집합이 서로 완전히 같은 경우 결과값을 다르게 반환해준다.(그냥 조금 더 엄격하다 정도..?)**
-
+    
     - **isDisjoint(with:) 메소드는 두 집합 사이의 공통 값을 확인하여 아무런 공통 값이 없을 때 true, 하나라도 있으면 false를 반환해준다.**
-
+    
     - 배열을 집합으로 번경한 뒤 다시 배열로 변경해 손쉽게 중복 값 제거가 가능하다,
 
 3. 튜플

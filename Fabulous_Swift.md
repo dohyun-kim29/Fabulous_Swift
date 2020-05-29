@@ -1109,8 +1109,6 @@ print(dessert)
 ["cake"]
     ```
 
-    
-
     - 그러나 **삭제할 값이 집합에 없으면 remove(:_)메소드는 아무것도 삭제하지 않고 nil 을 반환**한다.
 
     - ![image-20200528135137193](/Users/dohyunkim/Library/Application Support/typora-user-images/image-20200528135137193.png)
@@ -1118,7 +1116,7 @@ print(dessert)
       위 코드를 실행했을 때의 중간 과정
 
       
-    
+
     - **contains(_:)** 메소드는 인자값으로 입력된 데이터를 사용하여 **집합 안에 일치하는 데이터가 있는지 없는지 알려준다.**(Bool값으로 알려준다.)
     
       `메소드를 사용할 집합 이름.contains("찾아볼 데이터")`

@@ -1093,7 +1093,7 @@ repeat {
 - 다만 **삭제할 때에는 remove(_:)메소드를 사용**한다. 
 
     ```swift
-    ar dessert : Set = ["macaron", "cake"]
+    var dessert : Set = ["macaron", "cake"]
 print(dessert)
     
 dessert.remove("macaron")
@@ -1277,28 +1277,166 @@ print(dessert)
     - 배열을 집합으로 번경한 뒤 다시 배열로 변경해 손쉽게 중복 값 제거가 가능하다.
 
 3. 튜플
-    -  **하나의 튜플에 여러가지 타입의 아이템을 저장 가능 하다.**
+    - **하나의 튜플에 여러가지 타입의 아이템을 저장 가능 하다.**
+    
     - **상수의 성격을 띄어 한번 선언되면 값을 추가하거나 삭제 불가능하다.**
+    
     - **소괄호를 써서 정의한다.** EX) var tp = ("a", "b", 1, 2.2, true)
+    
+      `var 선언할 튜플 이름 = (데이터1, 데이터2, 데이터n...)`
+    
+      ```swift
+      var tp = (1, 2, "asd")
+      print(tp)
+      
+      ------result------
+      
+      (1, 2, "asd")
+      ```
+    
+      
+    
     - **인덱스를 점으로 표기한다.** EX) tp.0
+    
+      `튜플이름.인덱스`
+    
+      ```swift
+      var foo = (1, 2, "bar")
+      print(foo.1)
+      
+      ------result------
+      
+      2
+      ```
+    
+      
+    
     - 없는 인덱스를 참조시 오류가 발생한다,
+    
     - 아이템을 개별 변수나 상수로 할당받는 **바인딩**이 가능하다.
+    
+      ```swift
+      var sampletp = ("test", 123)
+      switch sampletp {
+      case let(string, number): print("string = \(string), num = \(number)")
+          
+      default:
+          break
+      }
+       
+      ------result------
+      
+      string = test, num = 123
+      ```
+    
+      
+    
     - **순회 탐색이 불가능하다.**
+    
     - 바인딩을 할 때 사용하지 않을 튜플 아이템은 언더바로 대체가 가능하다.
     
-4. 딕셔너리
+      ```swift
+      var sampletp = ("test", 123, 534254)
+      switch sampletp {
+      case let(string, number, _): print("string = \(string), num = \(number)")
+          
+      default:
+          break
+      }
+      
+      ------result------
+      
+      string = test, num = 123
+      ```
+    
+      
+    
+4. **딕셔너리**(중요중요정말중요)
+    
     - **고유 키와 그에 대응하는 값을 연결하여 데이터를 저장하는 자료형이다.**
-    - 정의 형식은 **[ 키 : 데이터, 키 : 데이터]** 이런 식으로 정의할 수 있다.
+    
+    - **딕셔너리 정의 형식**
+    
+      `var 딕셔너리 이름 = [키1:데이터1, 키2:데이터2, 키n...:데이터n...]
+    
+      ```swift
+      var fastfood = ["hamburger":"burgerking", "pizza":"dominopizza", "chicken":"BHC"]
+      print(fastfood["hamburger"])
+      
+      ------result------
+      
+      Optional("burgerking")
+      ```
+    
+      
+    
     - **하나의 키는 하나의 데이터에만 연결되어야 한다.**
+    
     - **같은 딕셔너리 내에서 키는 중복될 수 없다.**(중복해서 선언하면 아이템 수정으로 간주.)
+    
     - **데이터 타입엔 제한이 없으나, 하나의 딕셔너리 내에서는 같은 자료형을 사용하여야 한다.**
+    
     - **순회 탐색이 가능하다.**
+    
     - **키의 타입은 해시 연산이 가능해야 한다.**
-    - 빈 딕셔너리의 선언은 **Dictionary** 키워드를 통해 할 수 있다. EX) Dictionary <int, string> ( )
-    - 이것을 간단한 방식으로 줄이면 **[ 키로 사용할 타입 : 값으로 사용할 타입 ] ( )** 이렇게 선언해줄 수 있다.
+    
+    - 빈 딕셔너리의 선언은 **Dictionary** 키워드를 통해 할 수 있다.
+    
+      ` var  Dictionary <키의 자료형, 데이터의 자료형> ( )`
+    
+      ```swift
+      var blank = Dictionary<Int, String>()
+      ```
+    
+      
+    
+    - 이것을 간단한 방식으로 줄이면 
+    
+      `var 선언할 딕셔너리 이름 = [ 키로 사용할 타입 : 값으로 사용할 타입 ] ( )`
+    
+      ```swift
+      var emptyDic = [Int:String]()
+      ```
+    
+      
+    
     - 딕셔너리 역시 isEmpty 메소드를 사용할 수 있다.
-    - **updateValut(_:forKey:)** 메소드를 통해 딕셔너리에 값을 할당할 수 있다. <딕셔너리 객체>.updateValue(<저장할 데이터>, forKey:<데이터를 참조 및 저장하는 데 사용할 키>)
+    
+    - **updateValut(_:forKey:)** 메소드를 통해 딕셔너리에 값을 할당할 수 있다.
+    
+      ` 딕셔너리 객체.updateValue(저장할 데이터, forKey:데이터를 참조 및 저장하는 데 사용할 키)`
+    
+      ```swift
+      var num = [String:Int]()
+      num.updateValue(123, forKey: "number")
+      print(num["number"])
+      
+      ------result------
+      
+      Optional(123)
+      ```
+    
+      
+    
     - **removeValue(forKey:)** 메소드를 통해 딕셔너리에 값을 삭제할 수 있다.
+    
+      ```swift
+      var num = [String:Int]()
+      num.updateValue(123, forKey: "number")
+      print(num["number"])
+      
+      num.removeValue(forKey: "number")
+      print(num)
+      
+      ------result------
+      
+      Optional(123)
+      [:]
+      
+      ```
+    
+      
+    
     - ### 딕셔너리에서 키를 호출해서 저장된 값을 불러올 때 **옵셔널** 형태로 반환한다.
 
 

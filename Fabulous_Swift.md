@@ -1111,81 +1111,78 @@ repeat {
     var dessert : Set = ["macaron", "cake"]
 print(dessert)
     
-    ```
-
-dessert.remove("macaron")
+    dessert.remove("macaron")
+        print(dessert)
+    
+        dessert.remove("candy")
+    
     print(dessert)
-
-    dessert.remove("candy")
-print(dessert)
-    
-------result------
-    
-["macaron", "cake"]
+        
+    ------result------
+        
+    ["macaron", "cake"]
+        ["cake"]
     ["cake"]
-["cake"]
+    
     ```
 
-    - 그러나 **삭제할 값이 집합에 없으면 remove(:_)메소드는 아무것도 삭제하지 않고 nil 을 반환**한다.
-    
-    - ![image-20200528135137193](/Users/dohyunkim/Library/Application Support/typora-user-images/image-20200528135137193.png)
-    
-      위 코드를 실행했을 때의 중간 과정
 
 
-​      
-
-    - **contains(_:)** 메소드는 인자값으로 입력된 데이터를 사용하여 **집합 안에 일치하는 데이터가 있는지 없는지 알려준다.**(Bool값으로 알려준다.)
-    
-      `메소드를 사용할 집합 이름.contains("찾아볼 데이터")`
-    
-      ```swift
-      var school : Set = ["desk", "chair"]
-      print(school.contains("desk"))
-      
-      ------result------
-      
-      true
-      ```
+- 그러나 **삭제할 값이 집합에 없으면 remove(:_)메소드는 아무것도 삭제하지 않고 nil 을 반환**한다.
 
 
-​      
-​    
-​      
-​    
-    - **집합끼리는 연산을 할 수 있다.**  EX) arr1.intersection(arr2)
-    
-      `연산할 집합1.연산자(연산할 집합 2)`
 
 
-​      
-​    
-    - **intersection(_:) 메소드는 양쪽에서 공통된 아이템만 선택하여 새로운 집합을 만들어준다.**
-    
-      ```swift
-      var instrument1 : Set = ["piano", "guitar", "drum"]
-      var instrument2 : Set = ["guitar", "violin", "triangle"]
-      print(instrument1.intersection(instrument2))
-      
-      ------result------
-      
-      ["guitar"]
-      ```
+- **contains(_:)** 메소드는 인자값으로 입력된 데이터를 사용하여 **집합 안에 일치하는 데이터가 있는지 없는지 알려준다.**(Bool값으로 알려준다.)
+
+`메소드를 사용할 집합 이름.contains("찾아볼 데이터")`
+
+```swift
+var school : Set = ["desk", "chair"]
+  print(school.contains("desk"))
+  
+  ------result------
+  
+  true
+```
+
+
+
+
+  - **집합끼리는 연산을 할 수 있다.**
+
+  `연산할 집합1.연산자(연산할 집합 2)`
+
+- **intersection(_:) 메소드는 양쪽에서 공통된 아이템만 선택하여 새로운 집합을 만들어준다.**
+
+
+   ```swift
+ar instrument1 : Set = ["piano", "guitar", "drum"]
+  var instrument2 : Set = ["guitar", "violin", "triangle"]
+  print(instrument1.intersection(instrument2))
+  
+  ------result------
+  
+  ["guitar"]
+   ```
+
 
 
 ​      
-​    
-    - **symmetric Difference(_:) 메소드는 양쪽에서 어느 한 쪽에만 있는 아이템을 선택하여 새로운 집합을 만들어준다.(공통으로 있는 아이템은 제외)**
-    
-      ```swift
-      var instrument1 : Set = ["piano", "guitar", "drum"]
-      var instrument2 : Set = ["guitar", "violin", "triangle"]
-      print(instrument1.symmetricDifference(instrument2))
-      
-      ------result------
-      
-      ["triangle", "violin", "drum", "piano"]
-      ```
+
+- **symmetric Difference(_:) 메소드는 양쪽에서 어느 한 쪽에만 있는 아이템을 선택하여 새로운 집합을 만들어준다.(공통으로 있는 아이템은 제외)**
+
+```swift
+var instrument1 : Set = ["piano", "guitar", "drum"]
+  var instrument2 : Set = ["guitar", "violin", "triangle"]
+  print(instrument1.symmetricDifference(instrument2))
+  
+  ------result------
+  
+  ["triangle", "violin", "drum", "piano"]
+```
+
+
 
 
 ​      
@@ -1791,17 +1788,57 @@ print(dessert)
     
     - 매개변수가 **여러개일떄는 일부만 생략 할 수도 있다.**
     
+      
+    
     - **매개변수명 뒤에 ... 연산자를 붙여 가변적인 개수의 인자값을 받을 수 있다.**
     
     - 이를 **가변인자**라고 하는데 입력 개수를 특정할 수 없는 형태의 매개변수에 사용된다.
     
     - for~in문을 이용한 순회 탐색으로 모든 인자값을 순서대로 읽어 들일 수 있다.
     
+       ```swift
+      func avg(score: Int ...) -> Double {
+        
+          var total=0;
+      
+          for s in score{
+      
+              total += s;
+          }
+      
+          return Double(total) / Double(score.count)
+      }
+      
+      print("\(avg(score: 10,20,30,40))")
+      
+      //출처 : https://yzzzzun.tistory.com/12 (좋은 예문이 있길래 가져왔어요)
+      
+      ------result------
+      25.0
+       ```
+    
+      
+    
     - 매개변수는 **기본값**을 가질 수 있다.
     
-    - 기본값을 입력하는 방법은 **매개변수 타입 다음에 대입 연산자인 = 를 추가하고 기본값을 작성해주면 된다.**
+    - 기본값을 입력하는 방법
+    
+      `매개변수 타입 다음에 대입 연산자인 = 를 추가하고 기본값을 작성`
     
     - **함수에 입력된 인자값은 함수 내부에서 상수로 정의된다.**
+    
+      ```swift
+      func cul(num1 : Int = 1, num2 : Int = 2) {
+          print(num1 + num2)
+      }
+      
+      cul()
+      
+      ------result------
+      3
+      ```
+    
+      
     
     - ### **함수 내부에서 매개변수와 동일한 이름의 변수를 정의하고, 매개변수의 값을 대입해주면 매개변수의 값이 수정된다.**
     

@@ -1,5 +1,3 @@
-이 문서는 다른 프로그래밍 언어를 해본 경험이 있는 사람을 위해 만든 정리본입니다. 
+Swift의 기본적인 문법을 정리했습니다.
 
-또한 "꼼꼼한 재은 씨의 Swift:문법편" 을 정리해둔 것임을 밝힙니다.
-
-GitHub 에서 보면 이상하게 나올 수도 있으니 다운받아서 typora 등으로 보는걸 추천드립니다
+참조 도서 - http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791186710234&orderClick=LEa&Kc=
